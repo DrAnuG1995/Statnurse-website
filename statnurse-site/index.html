@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StatNurse | Agency Nursing Without the Agency | Launching December 2026</title>
+<meta name="description" content="StatNurse connects agency nurses directly with hospitals. No agencies, no commissions, no hidden fees. Sign up for early access. Launching December 2026.">
+<link rel="canonical" href="https://statnurse.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="StatNurse | Agency Nursing Without the Agency">
+<meta property="og:description" content="StatNurse connects agency nurses directly with hospitals. No agencies. Launching December 2026.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F4F5F8;--fg:#1F2344;--card:#FFFFFF;--muted:#5B6478;
+  --lime:#A4D65E;
+  /* StatNurse main palette */
+  --sn-grey-dark:#5B6478;
+  --sn-grey:#7C8194;       /* main brand grey - matches logo */
+  --sn-grey-light:#A8ADBE;
+  --sn-grey-bg:#EDEEF2;
+  --sn-blue:#3B82F6;       /* light blue accent */
+  --sn-blue-light:#7DD3FC;
+  --sn-blue-bg:#E0F2FE;
+  --sn-blue-deep:#0284C7;
+  --logo-purple:#5B5BD6;   /* used only for the "Stat" word in the logo */
+  --border:#C0C4D8;--destructive:#E53E3E;--lavender:#E5E8F4;
+}
+body{font-family:'DM Sans',sans-serif;background:#F4F5F8;color:#1a1d3b;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.container-sm{max-width:768px;margin:0 auto;padding:0 24px}
+.container-md{max-width:896px;margin:0 auto;padding:0 24px}
+.text-center{text-align:center}
+
+.section{padding:64px 24px}
+.section-lg{padding:80px 24px}
+.section-white{background:#FFFFFF}
+
+h1{font-size:2.5rem;font-weight:700;line-height:1.1;color:#1a1d3b}
+h2{font-size:1.875rem;font-weight:700;line-height:1.2;color:#1a1d3b}
+h3{color:#1a1d3b}
+.text-sn-blue{color:#3B82F6}
+.text-sn-grey{color:#5B6478}
+.text-sn-purple{color:#5B6478}
+.text-grey{color:#7C8194}
+.italic{font-style:italic}
+.text-muted{color:#555A7A}
+.text-sm{font-size:0.875rem}
+.text-xs{font-size:0.75rem}
+.text-lg{font-size:1.125rem}
+.font-semibold{font-weight:600}
+.font-medium{font-weight:500}
+
+.btn{display:inline-block;padding:16px 32px;border-radius:9999px;font-weight:700;font-size:1.125rem;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all 0.2s;border:none;text-align:center}
+.btn-primary{background:#A4D65E;color:#1a1d3b}
+.btn-primary:hover{filter:brightness(0.95);transform:scale(1.02)}
+.btn-primary:disabled{opacity:0.6;cursor:not-allowed;transform:none;filter:none}
+.btn-outline{background:transparent;color:#1a1d3b;border:2px solid #C0C4D8}
+.btn-outline:hover{background:rgba(0,0,0,0.03)}
+.btn-nav{background:#5B6478;color:#FFFFFF;padding:12px 24px;font-size:1rem}
+.btn-nav:hover{background:#4A5364}
+.btn-sm{padding:10px 20px;font-size:0.875rem}
+
+.grid-2{display:grid;grid-template-columns:1fr;gap:32px}
+.grid-3{display:grid;grid-template-columns:1fr;gap:20px}
+.grid-2x2{display:grid;grid-template-columns:1fr;gap:16px}
+
+.card{background:#FFFFFF;border-radius:16px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+.card:hover{box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+
+.flex{display:flex}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}
+.justify-between{justify-content:space-between}.justify-center{justify-content:center}
+.gap-3{gap:12px}.gap-4{gap:16px}.gap-5{gap:20px}
+.flex-col{flex-direction:column}
+
+.mx-auto{margin-left:auto;margin-right:auto}
+.mb-3{margin-bottom:12px}.mb-4{margin-bottom:16px}.mb-5{margin-bottom:20px}
+.mb-6{margin-bottom:24px}.mb-8{margin-bottom:32px}.mb-10{margin-bottom:40px}
+.mb-12{margin-bottom:48px}
+.mt-4{margin-top:16px}.mt-6{margin-top:24px}
+.max-w-lg{max-width:512px}.max-w-xl{max-width:576px}.max-w-md{max-width:448px}
+
+/* Nav */
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;padding-top:24px}
+.statnurse-logo{display:inline-flex;align-items:center;gap:10px;line-height:1}
+.statnurse-logo-icon{flex-shrink:0;color:#7C8194}
+.statnurse-logo-icon .accent{color:#5B5BD6}
+.statnurse-logo-text{font-weight:800;letter-spacing:-0.02em}
+.statnurse-logo-text .stat{color:#5B5BD6} /* logo "Stat" keeps brand purple from the StatNurse logo image */
+.statnurse-logo-text .nurse{color:#7C8194}
+.statnurse-logo.size-sm .statnurse-logo-icon{width:30px;height:30px}
+.statnurse-logo.size-sm .statnurse-logo-text{font-size:1.4rem}
+.statnurse-logo.size-lg .statnurse-logo-icon{width:48px;height:48px}
+.statnurse-logo.size-lg .statnurse-logo-text{font-size:2.25rem}
+
+/* Brand logo (img-based)
+   The PNG has a solid white background. mix-blend-mode:multiply makes those
+   white pixels render invisibly against any light page bg. */
+.brand-logo{display:block;width:auto;max-width:100%;mix-blend-mode:multiply}
+.brand-logo-sm{height:42px}
+.brand-logo-lg{height:64px}
+@media(min-width:768px){
+  .brand-logo-sm{height:52px}
+  .brand-logo-lg{height:84px}
+}
+
+/* Hero */
+.hero-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+
+.launch-pill{display:inline-flex;align-items:center;gap:8px;background:#E0F2FE;color:#0284C7;padding:8px 16px;border-radius:9999px;font-size:0.875rem;font-weight:600;margin-bottom:20px}
+.launch-pill .dot{width:8px;height:8px;border-radius:50%;background:#A4D65E;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+
+/* Counter */
+.counter-card{display:inline-flex;flex-direction:column;align-items:center;background:#FFFFFF;border:2px solid #C0C4D8;border-radius:16px;padding:20px 32px}
+.counter-num{font-size:3rem;font-weight:700;color:#3B82F6;line-height:1;font-variant-numeric:tabular-nums}
+.counter-label{font-size:0.875rem;color:#5B6478;margin-top:4px;text-align:center}
+
+/* Stat tiles (StatDoctor success block) */
+.stat-tiles{display:grid;grid-template-columns:1fr;gap:16px;max-width:768px;margin:0 auto 32px}
+.stat-tile{background:#FFFFFF;border-radius:16px;padding:28px 20px;box-shadow:0 1px 3px rgba(0,0,0,0.08);text-align:center;border-top:3px solid #A4D65E}
+.stat-tile-num{font-size:2.5rem;font-weight:800;color:#5B6478;line-height:1;font-variant-numeric:tabular-nums}
+.stat-tile-label{font-size:0.95rem;color:#5B6478;margin-top:8px}
+
+/* Author card */
+.author-card{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;background:#FFFFFF;border-radius:24px;padding:32px;box-shadow:0 4px 20px rgba(31,58,106,0.08);max-width:768px;margin:0 auto}
+.author-photo-wrap{display:flex;justify-content:center}
+.author-photo{width:140px;height:140px;border-radius:50%;background:#EDEEF2;object-fit:cover;border:3px solid #FFFFFF;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.author-photo-placeholder{display:flex;align-items:center;justify-content:center;color:#A8ADBE;font-size:0.75rem;font-weight:600;text-align:center;padding:12px}
+.author-name{font-size:1.25rem;font-weight:700;margin-bottom:4px}
+.author-role{font-size:0.875rem;color:#3B82F6;font-weight:600;margin-bottom:12px}
+.author-bio p{color:#5B6478;font-size:0.95rem;line-height:1.65;margin-bottom:10px}
+
+/* Benefit grid */
+.compare-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.compare-col{background:#FFFFFF;border-radius:16px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+.compare-col.bad{background:#FFF5F5;border:1px solid #FED7D7}
+.compare-col.good{background:#F0F7E8;border:1px solid #CDE4A8}
+.compare-col h3{font-size:1.125rem;margin-bottom:16px}
+.compare-list{list-style:none;padding:0;margin:0}
+.compare-list li{display:flex;align-items:flex-start;gap:10px;padding:10px 0;font-size:0.95rem;line-height:1.5}
+.compare-list li svg{flex-shrink:0;margin-top:2px}
+
+/* Form */
+.signup-card{background:#FFFFFF;border-radius:24px;padding:32px 28px;box-shadow:0 10px 40px rgba(31,58,106,0.12);max-width:520px;margin:0 auto}
+.form-group{margin-bottom:16px;text-align:left}
+.form-label{display:block;font-size:0.875rem;font-weight:600;margin-bottom:6px;color:#1a1d3b}
+.form-input{width:100%;padding:14px 16px;border:1.5px solid #C0C4D8;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:1rem;background:#FAFBFD;transition:border-color 0.2s,background 0.2s}
+.form-input:focus{outline:none;border-color:#3B82F6;background:#FFFFFF;box-shadow:0 0 0 3px rgba(59,130,246,0.15)}
+.form-input::placeholder{color:#A8ADBE}
+.form-input.error{border-color:#E53E3E;background:#FFF5F5}
+.form-error-msg{display:block;font-size:0.75rem;color:#E53E3E;margin-top:4px;min-height:14px}
+.form-status{margin-top:12px;padding:12px 16px;border-radius:12px;font-size:0.875rem;display:none}
+.form-status.error{display:block;background:#FFF5F5;color:#C53030;border:1px solid #FED7D7}
+.form-status.success{display:block;background:#F0F7E8;color:#3F6212;border:1px solid #CDE4A8}
+.btn-block{display:block;width:100%}
+
+/* Icon box */
+.icon-box{width:32px;height:32px;color:#5B6478;flex-shrink:0}
+.icon-box-lg{width:64px;height:64px;border-radius:16px;background:#E0F2FE;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+
+/* Steps */
+.steps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:768px;margin:0 auto}
+.step-card{text-align:center}
+.step-num{font-size:0.75rem;font-weight:700;color:#5B6478;text-transform:uppercase;letter-spacing:0.1em}
+.step-title{font-weight:600;margin-top:4px}
+
+/* Footer */
+.footer{text-align:center;margin-top:64px;font-size:0.75rem;color:#555A7A}
+
+/* Animations */
+.animate{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease-out,transform 0.6s ease-out}
+.animate.visible{opacity:1!important;transform:translateY(0)!important}
+.no-anim{opacity:1!important;transform:none!important}
+
+/* Responsive */
+@media(min-width:640px){
+  .grid-2x2{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:768px){
+  h1{font-size:3.5rem}
+  h2{font-size:2.25rem}
+  .section{padding:80px 24px}
+  .section-lg{padding:96px 24px}
+  .hero-grid{grid-template-columns:1.1fr 1fr}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .compare-grid{grid-template-columns:1fr 1fr}
+  .steps-grid{grid-template-columns:repeat(4,1fr)}
+  .stat-tiles{grid-template-columns:repeat(3,1fr)}
+  .author-card{grid-template-columns:180px 1fr;text-align:left}
+  .author-card .author-photo{margin:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="section" style="padding-bottom:48px">
+<div class="container">
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="#" aria-label="StatNurse">
+      <img src="img/StatNurse-logo.png" alt="StatNurse" class="brand-logo brand-logo-sm">
+    </a>
+    <a href="#signup" class="btn btn-nav btn-sm">Get Early Access</a>
+  </nav>
+
+  <!-- Hero Content -->
+  <div class="hero-grid">
+    <div class="no-anim">
+      <span class="launch-pill"><span class="dot"></span> Launching December 2026</span>
+      <h1 style="margin-bottom:20px">
+        Agency Nursing, <span class="text-grey italic">Without the Agency</span>
+      </h1>
+      <p class="text-lg text-muted" style="margin-bottom:32px;max-width:512px">
+        StatNurse connects agency nurses directly with hospitals.<br>Higher rates. Real transparency. No middlemen.
+      </p>
+      <div class="flex flex-wrap gap-4 mb-6">
+        <a href="#signup" class="btn btn-primary">Sign Up for Early Access</a>
+        <a href="#why" class="btn btn-outline">See Why &rarr;</a>
+      </div>
+      <p class="text-sm text-muted">
+        Built by the team behind <a href="https://statdoctor.app/" target="_blank" rel="noopener" style="color:#3B82F6;font-weight:600">StatDoctor</a>. Trusted by <strong>300+ doctors</strong> and <strong>60+ healthcare facilities</strong> across Australia.
+      </p>
+    </div>
+    <div class="no-anim text-center">
+      <div class="counter-card animate visible" id="counterCard">
+        <div class="counter-num" id="counterNum">...</div>
+        <div class="counter-label">nurses signed up<br>for the December 2026 launch</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== WHY (compare) ===== -->
+<section class="section section-white" id="why">
+<div class="container-md">
+  <h2 class="text-center mb-3">
+    Why Skip the <span class="text-grey italic">Agency?</span>
+  </h2>
+  <p class="text-center text-muted mb-10 max-w-xl mx-auto">
+    Most agency nurses still go through an agency that takes a cut, controls the conversation, and slows everything down. StatNurse cuts the agency out and connects you straight to the hospital.
+  </p>
+
+  <div class="compare-grid">
+    <div class="compare-col bad">
+      <h3>The Old Way: Through an Agency</h3>
+      <ul class="compare-list">
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#E53E3E" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <span>Agency takes 20-35% of your rate</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#E53E3E" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <span>Endless calls, texts, and chasing recruiters</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#E53E3E" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <span>Hidden conditions revealed only after you commit</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#E53E3E" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <span>No way to compare wards or hospitals before you go</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#E53E3E" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <span>Restrictive contracts and exclusivity clauses</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#E53E3E" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <span>Slow, opaque payment cycles</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="compare-col good">
+      <h3>The StatNurse Way</h3>
+      <ul class="compare-list">
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#5B6478" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Higher rates</strong>, no agency commission</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#5B6478" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Browse and apply on your own time, in-app</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#5B6478" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Transparent</strong> rates, ward, and shift details upfront</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#5B6478" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Real reviews from other agency nurses</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#5B6478" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>No exclusivity. Work where you want, when you want</span>
+        </li>
+        <li>
+          <svg width="18" height="18" fill="none" stroke="#5B6478" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Direct, fast payments from the hospital</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== KEY BENEFITS ===== -->
+<section class="section">
+<div class="container">
+  <h2 class="text-center mb-12">
+    Why Nurses Will Use <span class="text-sn-blue italic">StatNurse</span>
+  </h2>
+  <div class="grid-3" style="max-width:896px;margin:0 auto">
+    <div class="card">
+      <svg class="icon-box mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <h3 class="font-semibold text-lg mb-3" style="font-size:1.125rem">Keep more of your pay</h3>
+      <p class="text-sm text-muted">No agency taking a cut between you and the ward.</p>
+    </div>
+    <div class="card">
+      <svg class="icon-box mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7H3l2-4h14l2 4"/><path d="M5 21V10.87M19 21V10.87"/></svg>
+      <h3 class="font-semibold text-lg mb-3" style="font-size:1.125rem">Direct hospital contact</h3>
+      <p class="text-sm text-muted">Talk to the unit manager, not a recruiter you've never met.</p>
+    </div>
+    <div class="card">
+      <svg class="icon-box mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <h3 class="font-semibold text-lg mb-3" style="font-size:1.125rem">Transparent shifts</h3>
+      <p class="text-sm text-muted">Rate, ward, and conditions visible before you apply.</p>
+    </div>
+    <div class="card">
+      <svg class="icon-box mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <h3 class="font-semibold text-lg mb-3" style="font-size:1.125rem">A nurse-only community</h3>
+      <p class="text-sm text-muted">Connect with other agency nurses, swap advice, share tips.</p>
+    </div>
+    <div class="card">
+      <svg class="icon-box mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <h3 class="font-semibold text-lg mb-3" style="font-size:1.125rem">Real ward reviews</h3>
+      <p class="text-sm text-muted">See honest reviews from other agency nurses before you sign on.</p>
+    </div>
+    <div class="card">
+      <svg class="icon-box mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <h3 class="font-semibold text-lg mb-3" style="font-size:1.125rem">Pick your own roster</h3>
+      <p class="text-sm text-muted">Browse open shifts, choose what fits your life.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="section section-white">
+<div class="container">
+  <h2 class="text-center mb-12">
+    How StatNurse <span class="text-sn-blue italic">Works</span>
+  </h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="icon-box-lg">
+        <svg width="28" height="28" fill="none" stroke="var(--sn-blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      </div>
+      <span class="step-num">01</span>
+      <p class="step-title">Sign up for early access</p>
+    </div>
+    <div class="step-card">
+      <div class="icon-box-lg">
+        <svg width="28" height="28" fill="none" stroke="var(--sn-blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+      </div>
+      <span class="step-num">02</span>
+      <p class="step-title">Get the app at launch</p>
+    </div>
+    <div class="step-card">
+      <div class="icon-box-lg">
+        <svg width="28" height="28" fill="none" stroke="var(--sn-blue)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <span class="step-num">03</span>
+      <p class="step-title">Browse local shifts</p>
+    </div>
+    <div class="step-card">
+      <div class="icon-box-lg">
+        <svg width="28" height="28" fill="none" stroke="var(--sn-blue)" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </div>
+      <span class="step-num">04</span>
+      <p class="step-title">Apply directly to the hospital</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== STATDOCTOR SUCCESS ===== -->
+<section class="section">
+<div class="container-md">
+  <h2 class="text-center mb-3">
+    Built on the Success of <span class="text-sn-grey italic">StatDoctor</span>
+  </h2>
+  <p class="text-center text-muted mb-10 max-w-xl mx-auto">
+    StatNurse isn't a guess. It's the same direct-to-hospital model that's already working for doctors across Australia.
+  </p>
+
+  <div class="stat-tiles">
+    <div class="stat-tile">
+      <div class="stat-tile-num">300+</div>
+      <div class="stat-tile-label">Doctors using StatDoctor</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-tile-num">60+</div>
+      <div class="stat-tile-label">Healthcare facilities and counting</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-tile-num">$0</div>
+      <div class="stat-tile-label">In agency commissions paid by our doctors</div>
+    </div>
+  </div>
+
+  <p class="text-center text-muted max-w-xl mx-auto">
+    Now we're bringing the same model to nursing, and you can be one of the first nurses on the platform.
+  </p>
+</div>
+</section>
+
+<!-- ===== ABOUT THE AUTHOR ===== -->
+<section class="section section-white" id="about">
+<div class="container-md">
+  <h2 class="text-center mb-10">About the <span class="text-sn-grey italic">Author</span></h2>
+
+  <div class="author-card">
+    <div class="author-photo-wrap">
+      <img src="img/anurag-headshot.jpeg" alt="Dr Anu Ganugapati" class="author-photo" id="authorPhoto" onerror="document.getElementById('authorPhotoFallback').style.display='flex';this.style.display='none';">
+      <div class="author-photo author-photo-placeholder" id="authorPhotoFallback" style="display:none">
+        <span>Headshot missing<br>img/anurag-headshot.jpeg</span>
+      </div>
+    </div>
+    <div class="author-bio">
+      <div class="author-name">Dr Anu Ganugapati</div>
+      <div class="author-role">Founder, StatDoctor and StatNurse</div>
+      <p>
+        I started StatDoctor after seeing first-hand how broken agency work had become in Australia. Agencies were
+        controlling every conversation, hiding rates, and frustrating hospitals with the same middlemen. So I built
+        the platform I wished existed: doctors and hospitals talking directly, on transparent terms.
+      </p>
+      <p>
+        Today, 300+ doctors and 60+ healthcare facilities use StatDoctor. Every shift posted goes straight from
+        the hospital to the doctor, with no agency, no commission, and no chasing recruiters. Nurses kept asking
+        for the same thing, so we're building it. StatNurse launches December 2026, and you can be one of the first
+        nurses on the platform.
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SIGN UP ===== -->
+<section class="section" id="signup">
+<div class="container-sm text-center">
+  <h2 class="mb-3">
+    Be First in Line for <span class="text-sn-grey italic">December 2026</span>
+  </h2>
+  <p class="text-muted mb-8 max-w-xl mx-auto">
+    Drop your details below. We'll let you know the moment StatNurse is live in your state.
+  </p>
+
+  <form class="signup-card" id="signupForm" novalidate>
+    <div class="form-group">
+      <label for="name" class="form-label">Full name</label>
+      <input type="text" id="name" name="name" class="form-input" placeholder="Jane Smith" required autocomplete="name">
+      <span class="form-error-msg" id="nameError"></span>
+    </div>
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" name="email" class="form-input" placeholder="jane@example.com" required autocomplete="email">
+      <span class="form-error-msg" id="emailError"></span>
+    </div>
+    <div class="form-group">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="tel" id="phone" name="phone" class="form-input" placeholder="0412 345 678" required autocomplete="tel">
+      <span class="form-error-msg" id="phoneError"></span>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+      Sign Me Up
+    </button>
+    <div class="form-status" id="formStatus"></div>
+    <p class="text-xs text-muted mt-4">
+      We'll only use your details to contact you about the StatNurse launch. No spam, no agencies, ever.
+    </p>
+  </form>
+</div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="section-lg section-white">
+<div class="container text-center">
+  <img src="img/StatNurse-logo.png" alt="StatNurse" class="brand-logo brand-logo-lg mb-6" style="display:inline-block">
+
+  <h2 class="mb-4">
+    Agency Nursing, <span class="text-sn-grey italic">Reimagined</span>
+  </h2>
+  <p class="text-muted mb-8 max-w-md mx-auto">
+    Built by the team behind StatDoctor. Launching December 2026.
+  </p>
+  <a href="#signup" class="btn btn-primary">Sign Up for Early Access</a>
+</div>
+<footer class="footer">
+  &copy; 2026 StatNurse. All rights reserved.
+</footer>
+</section>
+
+<!-- ===== Supabase config & form logic ===== -->
+<script>
+  // ---- Supabase config ----------------------------------------------------
+  // Public keys only - row-level security on nurse_signups (migration 006)
+  // is what protects the data. Override via window.SUPABASE_* if needed.
+  const SUPABASE_URL = window.SUPABASE_URL || 'https://ishxbkgouqmaollnbdul.supabase.co';
+  const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'sb_publishable_i4doC8kOnYhxLerADn35Ng_WjrwDGeV';
+  // Baseline shown to visitors before/in addition to real signups, so the
+  // counter never reads as empty on launch day.
+  const BASE_COUNT = 20;
+  // -----------------------------------------------------------------------
+
+  const counterEl = document.getElementById('counterNum');
+  const form = document.getElementById('signupForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const statusEl = document.getElementById('formStatus');
+
+  function isConfigured() {
+    return !SUPABASE_URL.includes('YOUR-PROJECT') && !SUPABASE_ANON_KEY.includes('YOUR-ANON-KEY');
+  }
+
+  function animateCount(target) {
+    const duration = 1200;
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      counterEl.textContent = Math.round(target * eased).toLocaleString();
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    counterEl.textContent = '0';
+    requestAnimationFrame(tick);
+  }
+
+  async function loadCount() {
+    if (!isConfigured()) {
+      animateCount(BASE_COUNT);
+      return;
+    }
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_nurse_signup_count`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: '{}',
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const count = await res.json();
+      const real = typeof count === 'number' ? count : 0;
+      animateCount(real + BASE_COUNT);
+    } catch (err) {
+      console.error('Failed to load signup count', err);
+      animateCount(BASE_COUNT);
+    }
+  }
+
+  function showError(field, msg) {
+    document.getElementById(field).classList.add('error');
+    document.getElementById(field + 'Error').textContent = msg;
+  }
+  function clearError(field) {
+    document.getElementById(field).classList.remove('error');
+    document.getElementById(field + 'Error').textContent = '';
+  }
+  function setStatus(kind, msg) {
+    statusEl.className = 'form-status ' + kind;
+    statusEl.textContent = msg;
+  }
+
+  function validate(name, email, phone) {
+    let ok = true;
+    ['name', 'email', 'phone'].forEach(clearError);
+    if (!name || name.trim().length < 2) {
+      showError('name', 'Please enter your full name');
+      ok = false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showError('email', 'Please enter a valid email');
+      ok = false;
+    }
+    const digits = phone.replace(/\D/g, '');
+    if (digits.length < 8) {
+      showError('phone', 'Please enter a valid phone number');
+      ok = false;
+    }
+    return ok;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.className = 'form-status';
+    statusEl.textContent = '';
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim().toLowerCase();
+    const phone = form.phone.value.trim();
+    if (!validate(name, email, phone)) return;
+
+    if (!isConfigured()) {
+      setStatus('error', 'Signup backend is not configured yet. Please contact the StatNurse team.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Signing you up…';
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/nurse_signups`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          source: 'statnurse-landing',
+        }),
+      });
+
+      if (res.status === 409 || res.status === 400) {
+        // Likely a duplicate email (UNIQUE constraint)
+        const text = await res.text();
+        if (/duplicate|unique/i.test(text)) {
+          setStatus('success', "You're already on the list. See you in December!");
+          form.reset();
+        } else {
+          throw new Error(text);
+        }
+      } else if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      } else {
+        setStatus('success', "You're in! We'll be in touch closer to launch.");
+        form.reset();
+      }
+      // Refresh the live counter
+      loadCount();
+    } catch (err) {
+      console.error(err);
+      setStatus('error', "Something went wrong. Please try again or email hello@statnurse.app.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Sign Me Up';
+    }
+  });
+
+  // Light-touch scroll animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.animate').forEach(el => obs.observe(el));
+    loadCount();
+  });
+</script>
+
+</body>
+</html>
